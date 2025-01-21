@@ -37,7 +37,7 @@ class App:
         self.r, self.c = 28, 28
         self.radius = 2
 
-        pyxel.init(self.r, self.c, fps=165)
+        pyxel.init(self.r, self.c, fps=165, title="What num")
 
         self.grid = np.array([[[0 for y in range(self.c)] for x in range(self.r)]], dtype=np.float32)
 
@@ -66,10 +66,17 @@ class App:
             for x in range(self.radius):
                 for y in range(self.radius):
                     if(self.in_bounds(pyxel.mouse_x + x, pyxel.mouse_y + y)):
-                        self.grid[0][pyxel.mouse_y + y][pyxel.mouse_x + x] = 1 if (x == 0 and y == 0) else 1
+                        self.grid[0][pyxel.mouse_y + y][pyxel.mouse_x + x] = 1
+            self.update_inference()
+
+        if(pyxel.btnp(pyxel.MOUSE_BUTTON_RIGHT, hold=1, repeat=1)):
+            for x in range(self.radius):
+                for y in range(self.radius):
+                    if(self.in_bounds(pyxel.mouse_x + x, pyxel.mouse_y + y)):
+                        self.grid[0][pyxel.mouse_y + y][pyxel.mouse_x + x] = 0
             self.update_inference()
         
-        if(pyxel.btnp(pyxel.MOUSE_BUTTON_RIGHT)):
+        if(pyxel.btnp(pyxel.KEY_Q)):
             for x in range(self.r):
                 for y in range(self.c):
                     self.grid[0][y][x] = 0
