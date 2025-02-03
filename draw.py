@@ -4,6 +4,7 @@ from torch import nn, load, tensor
 import torchvision.models as models
 
 import numpy as np
+from nn import NeuralNetwork
 
 CLASSES = [str(n) for n in range(10)]
 
@@ -14,27 +15,6 @@ DEVICE = (
     if torch.backends.mps.is_available()
     else "cpu"
 )
-
-class NeuralNetwork(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.flatten = nn.Flatten()
-        self.linear_relu_stack = nn.Sequential(
-            nn.Linear(28*28, 512),
-            nn.ReLU(),
-            nn.Linear(512, 512),
-            nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Linear(256, 256),
-            nn.ReLU(),
-            nn.Linear(256, 10)
-        )
-
-    def forward(self, x):
-        x = self.flatten(x)
-        logits = self.linear_relu_stack(x)
-        return logits
 
 class App:
     def __init__(self):
@@ -50,14 +30,14 @@ class App:
         self.model = NeuralNetwork().to(DEVICE)
         self.model.load_state_dict(load("model.pth", weights_only=True))
         self.model.eval()
-        self.predicted = "None"
+        self.predicted: None | str = "None"
 
         pyxel.run(self.update, self.draw)
 
     def in_bounds(self, x: int, y: int) -> bool:
         return 0 <= x < self.r and 0 <= y < self.c
     
-    def update_inference(self, is_clear = False):
+    def update_inference(self, is_clear: bool = False):
         if(is_clear):
             self.predicted = "None"
             return
