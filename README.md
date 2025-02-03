@@ -24,7 +24,7 @@ To run simply run `pyxel run draw.py` in the root directory
 
 ### Training Notebook
 
-`DS102_KANUPSIM_MNIST.ipynb` contains the 
+`DS102_KANUPSIM_MNIST.ipynb` contains the code for training the model through `pytorch`. Simply run each cell to generate a new model. (The last cell runs a 'quick' test on the test dataset to test accuracy)
 
 ## Attributions
 
