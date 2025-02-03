@@ -23,7 +23,7 @@ class App:
 
         pyxel.init(self.r, self.c, fps=165, title="What num")
 
-        self.grid = np.array([[[0 for y in range(self.c)] for x in range(self.r)]], dtype=np.float32)
+        self.grid = tensor([[[0 for y in range(self.c)] for x in range(self.r)]], dtype=torch.float32).to(DEVICE)
 
         pyxel.mouse(True)
 
@@ -41,8 +41,7 @@ class App:
         if(is_clear):
             self.predicted = "None"
             return
-        grid = tensor(self.grid).to(DEVICE)
-        pred = self.model(grid)
+        pred = self.model(self.grid)
         self.predicted = CLASSES[pred[0].argmax(0)]
 
     def update(self):
