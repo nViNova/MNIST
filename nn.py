@@ -1,5 +1,5 @@
 from torch import nn
-
+# the neural network model is defined in a separate file to avoid repetition in the draw and notebook files.
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super().__init__()
