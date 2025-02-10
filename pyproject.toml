@@ -12,6 +12,8 @@ dependencies = [
   "streamlit",
   "pyxel",
   "streamlit-drawable-canvas>=0.9.3",
+  "pillow>=11.1.0",
+  "torchshow>=0.5.1",
 ]
 
 [[tool.uv.index]]

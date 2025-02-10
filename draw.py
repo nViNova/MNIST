@@ -1,8 +1,6 @@
 import pyxel
 import torch
-from torch import nn, load, tensor
-import torchvision.models as models
-
+from torch import load, tensor
 from nn import NeuralNetwork
 
 CLASSES = [str(n) for n in range(10)]

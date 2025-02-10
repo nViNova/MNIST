@@ -1020,12 +1020,14 @@ dependencies = [
     { name = "jupyter" },
     { name = "matplotlib" },
     { name = "pandas" },
+    { name = "pillow" },
     { name = "pyxel" },
     { name = "ruff" },
     { name = "streamlit" },
     { name = "streamlit-drawable-canvas" },
     { name = "torch", version = "2.6.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torch", version = "2.6.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "torchshow" },
     { name = "torchvision", version = "0.21.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torchvision", version = "0.21.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
 ]
@@ -1035,12 +1037,14 @@ requires-dist = [
     { name = "jupyter" },
     { name = "matplotlib" },
     { name = "pandas" },
+    { name = "pillow", specifier = ">=11.1.0" },
     { name = "pyxel" },
     { name = "ruff" },
     { name = "streamlit" },
     { name = "streamlit-drawable-canvas", specifier = ">=0.9.3" },
     { name = "torch", marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torch", marker = "sys_platform == 'linux' or sys_platform == 'win32'", index = "https://download.pytorch.org/whl/cu124" },
+    { name = "torchshow", specifier = ">=0.5.1" },
     { name = "torchvision", marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torchvision", marker = "sys_platform == 'linux' or sys_platform == 'win32'", index = "https://download.pytorch.org/whl/cu124" },
 ]
@@ -2086,6 +2090,19 @@ wheels = [
     { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp313-cp313-linux_x86_64.whl", hash = "sha256:0f3bc53c988ce9568cd876a2a5316761e84a8704135ec8068f5f81b4417979cb" },
     { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp313-cp313-win_amd64.whl", hash = "sha256:519330eef09534acad8110b6f423d2fe58c1d8e9ada999ed077a637a0021f908" },
     { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp313-cp313t-linux_x86_64.whl", hash = "sha256:35cba404c0d742406cdcba1609085874bc60facdfbc50e910c47a92405fef44c" },
+]
+
+[[package]]
+name = "torchshow"
+version = "0.5.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/87/ef/4c3d5705aa9f884cc75d72e704eeea4f68ccefa7cdcbcb7d43766a2ece5b/torchshow-0.5.1.tar.gz", hash = "sha256:a3b52b5fef7afcdcf77aa10589d30cf2b4040f7ad29e4e43ec7e4d6acc38b254", size = 21387 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/63/8d/bd603d1ffad76cd1aa0dc7313e5cc3f5d1adda274c8568d614f421fabe1a/torchshow-0.5.1-py3-none-any.whl", hash = "sha256:a14c0c310ec634b2b5da9bacf966449b259996eba2ebf1bfec9613f4fe9c262e", size = 17245 },
 ]
 
 [[package]]
