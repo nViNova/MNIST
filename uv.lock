@@ -1020,16 +1020,14 @@ dependencies = [
     { name = "jupyter" },
     { name = "matplotlib" },
     { name = "pandas" },
+    { name = "pyxel" },
     { name = "ruff" },
+    { name = "streamlit" },
+    { name = "streamlit-drawable-canvas" },
     { name = "torch", version = "2.6.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torch", version = "2.6.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
     { name = "torchvision", version = "0.21.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torchvision", version = "0.21.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-]
-
-[package.optional-dependencies]
-streamlit = [
-    { name = "streamlit" },
 ]
 
 [package.metadata]
@@ -1037,8 +1035,10 @@ requires-dist = [
     { name = "jupyter" },
     { name = "matplotlib" },
     { name = "pandas" },
+    { name = "pyxel" },
     { name = "ruff" },
-    { name = "streamlit", marker = "extra == 'streamlit'" },
+    { name = "streamlit" },
+    { name = "streamlit-drawable-canvas", specifier = ">=0.9.3" },
     { name = "torch", marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
     { name = "torch", marker = "sys_platform == 'linux' or sys_platform == 'win32'", index = "https://download.pytorch.org/whl/cu124" },
     { name = "torchvision", marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
@@ -1640,6 +1640,21 @@ wheels = [
 ]
 
 [[package]]
+name = "pyxel"
+version = "2.3.4"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/86/7c/6e687a2e6d7e6ec7cb66995b9b700b674cc9a74a8228b62178b8d478afa1/pyxel-2.3.4-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:d96d3053b2b032b3f5f5bd6af1b3e081b38e1e875335cdb661e6e13ffabe40f5", size = 3480055 },
+    { url = "https://files.pythonhosted.org/packages/3c/83/4c582ef4720946887f0557d0fc2094db7c813847380a39105c4c6acc2d32/pyxel-2.3.4-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:d0e125200db0760c36640e311ba8e48d4cf78900cf4dbddfc9dccd6554da894c", size = 3305688 },
+    { url = "https://files.pythonhosted.org/packages/af/0a/3db1b7cc11f0a09a5129d392b3b4c8f6706cc1df308eb3903798b5bad8cc/pyxel-2.3.4-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e8ae94aea59438fab5cf81398714a0bbae115397c438be6149f53dd85f6f1083", size = 2962901 },
+    { url = "https://files.pythonhosted.org/packages/48/22/c8dbcb1e00adb544b7d8a9fac3af41c2b5573eb2ca3626266c786586155f/pyxel-2.3.4-cp38-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:2a108b10818dc9b2cef026b9f8b81e0b777504a7c41c714912edbc50cfb3e970", size = 2977974 },
+    { url = "https://files.pythonhosted.org/packages/8f/bb/2ba957f25e4d18e5367785961958fc0bd762973b67d48256caf0c7e6f0e3/pyxel-2.3.4-cp38-abi3-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:97cdfa6db43ab585bd04b70dc4d2775f9d4695068dbc7b39aeaec3400cc03384", size = 3237095 },
+    { url = "https://files.pythonhosted.org/packages/a2/aa/76ef166a337f6ecb2407d5c211f6ea39f6c68575f21a9360ba1b9e9c7b5f/pyxel-2.3.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:13c4a7932ca8f4ea66f88eb8d9436ec85ce0293c095236b56598a5c751e0d53d", size = 3043239 },
+    { url = "https://files.pythonhosted.org/packages/e1/a6/2151743c99856873b9168a38986f9b28b121e293776c753a2f4321ec16c3/pyxel-2.3.4-cp38-abi3-win32.whl", hash = "sha256:f8d08499b634554dd425539c000c68e89216e626ce928dfc3e67125e0b00f091", size = 3119030 },
+    { url = "https://files.pythonhosted.org/packages/75/43/a462c0de8c0d0fd1c4edb6c2223fb689ede15a4e5889234fbaeb77519175/pyxel-2.3.4-cp38-abi3-win_amd64.whl", hash = "sha256:8ef3dd63b50d0fa73c21b2652da76bff67d41aaa8c67d4125ccfb6049421dc20", size = 3266858 },
+]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1940,6 +1955,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0e/61/a59da06a2822b265fc6230650a1ec4b9203da76ee9cf023083752debf9fa/streamlit-1.42.0.tar.gz", hash = "sha256:8c48494ccfad33e7d0bc5873151800b203cb71203bfd42bc7418940710ca4970", size = 9169261 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ad/dc/69068179e09488d0833a970d06e8bf40e35669a7bddb8a3caadc13b7dff4/streamlit-1.42.0-py2.py3-none-any.whl", hash = "sha256:edf333fd3525b7c64b19e1156b483a1a93cbdb09a3a06f26478388d68f971090", size = 9560180 },
+]
+
+[[package]]
+name = "streamlit-drawable-canvas"
+version = "0.9.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pillow" },
+    { name = "streamlit" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/07/fe/69768e7391587b97ef5c503c263bdf960e21f20c02c6b17427a8963af0c6/streamlit-drawable-canvas-0.9.3.tar.gz", hash = "sha256:a31e581bfd63545ecbca71bc3286c09f0542e4199109d33f56392345996802f5", size = 1158330 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d6/87/bc94460ec77d824735da56fe8e321baf0692595c2a8a90b55f6908a5edc4/streamlit_drawable_canvas-0.9.3-py3-none-any.whl", hash = "sha256:fbb5e29017d359d5438e327ca0a64d0b337a9f2e1f999cd7593baa5bb8a27c25", size = 1169097 },
 ]
 
 [[package]]

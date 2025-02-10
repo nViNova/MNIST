@@ -8,7 +8,10 @@ dependencies = [
   "pandas",
   "torch",
   "torchvision",
-  "ruff"
+  "ruff",
+  "streamlit",
+  "pyxel",
+  "streamlit-drawable-canvas>=0.9.3",
 ]
 
 [[tool.uv.index]]
@@ -22,9 +25,4 @@ torch = [
 ]
 torchvision = [
   { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-]
-
-[project.optional-dependencies]
-streamlit = [
-  "streamlit"
 ]
