@@ -42,12 +42,15 @@ with canvas:
 
     realtime_update = st.sidebar.checkbox("Real-time Inferences", True)
 
+    if not realtime_update:
+        infer_pressed = st.button("Infer", type="primary")
+
     canvas_result = st_canvas(
         fill_color="#FFFFFF",
         stroke_width=stroke_width,
         stroke_color=stroke_color,
         background_color=bg_color,
-        update_streamlit=realtime_update,
+        update_streamlit=realtime_update if realtime_update else infer_pressed,
         height=560,
         width=560,
         drawing_mode=drawing_mode,
