@@ -35,3 +35,7 @@ To run simply run `pyxel run draw.py` in the root directory
 ### Training
 
 PyTorch Docs were highly utilized to make the notebook for training the NN. Most functions for training and testing the model from the dataset were from the [quickstart guide](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html).
+
+### Web Application
+
+[Streamlit](https://streamlit.io/) was used to create, host, and deploy the Web Application, the Drawing 'Canvas' component was made with [andfanilo/streamlit-drawable-canvas](https://github.com/andfanilo/streamlit-drawable-canvas).
