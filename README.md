@@ -6,7 +6,11 @@ Fulfilled as part of the requirements for DS102
 
 ## To Use
 
-### Drawing Inference Application
+### Drawing Inference Web App (Online)
+
+**No Installation Needed!** Simply visit [MNIST Draw - KUNOSPSIM](https://kunopsim.streamlit.app/) to acces the drawing inference Web App.
+
+### Drawing Inference Application (Local)
 
 **Note:** Requires `pyxel` and `pytorch` to run
 
