@@ -6,7 +6,6 @@ from torch import load
 from torchvision.transforms import v2
 from nn import NeuralNetwork
 from PIL import Image
-import torchshow as tw
 
 torch.classes.__path__ = []
 
