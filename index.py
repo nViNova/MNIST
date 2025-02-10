@@ -12,19 +12,19 @@ torch.classes.__path__ = []
 
 CLASSES = [str(n) for n in range(10)]
 
-DEVICE = (
-    "cuda"
-    if torch.cuda.is_available()
-    else "mps"
-    if torch.backends.mps.is_available()
-    else "cpu"
-)
+DEVICE = "cpu"
+
+def wide():
+    st.set_page_config(layout="wide")
+
+wide()
 
 st.title("MNIST Number Draw")
+
 canvas, predictions = st.columns(2)
 
 model = NeuralNetwork().to(DEVICE)
-model.load_state_dict(load("model.pth", weights_only=True))
+model.load_state_dict(load("model.pth", weights_only=True, map_location=torch.device('cpu')))
 model.eval()
 pred = None
 
@@ -32,6 +32,7 @@ with canvas:
     drawing_mode = st.sidebar.selectbox(
         "Drawing tool:", ("freedraw", "line", "rect", "circle", "transform")
     )
+
 
     stroke_width = st.sidebar.slider("Stroke width: ", 40, 160, 60, 20)
     if drawing_mode == 'point':
