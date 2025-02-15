@@ -78,6 +78,6 @@ with predictions:
         # tw.save(img_tensor, ".")
 
         pred = model(img_tensor)
-        st.subheader(f"Probably a {CLASSES[pred[0].argmax(0)]}")
+        st.subheader(f"Probably {'an' if CLASSES[pred[0].argmax(0)] == '8' else 'a'} {CLASSES[pred[0].argmax(0)]}")
         for classification, percentage in enumerate(pred[0]):
             st.slider(label=str(classification), value=float(percentage), disabled=True)

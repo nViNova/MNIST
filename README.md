@@ -8,7 +8,7 @@ Fulfilled as part of the requirements for DS102
 
 ### Drawing Inference Web App (Online)
 
-**No Installation Needed!** Simply visit [MNIST Draw - KUNOSPSIM](https://kunopsim.streamlit.app/) to acces the drawing inference Web App.
+**No Installation Needed!** Simply visit [MNIST Draw - KUNOSPSIM](https://kunopsim.streamlit.app/) to access the drawing inference Web App.
 
 ### Drawing Inference Application (Local)
 
